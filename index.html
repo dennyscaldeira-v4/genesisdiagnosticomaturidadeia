@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico de Maturidade em IA — Genesis Consulting</title>
+  <meta name="description" content="Descubra o que impede a IA de gerar resultado na sua empresa e quais alavancas podem destravar eficiência, margem e escala." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo-genesis.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <img src="assets/logo-genesis.svg" alt="Genesis Consulting" class="logo" />
+  </header>
+
+  <main id="app" class="app">
+
+    <!-- INTRO -->
+    <section class="screen screen--intro is-active" id="screen-intro">
+      <div class="intro">
+        <p class="eyebrow">Genesis Consulting</p>
+        <h1 class="intro__title">Diagnóstico de Maturidade em IA</h1>
+        <p class="intro__lead">Descubra o que impede a IA de gerar resultado na sua empresa e quais alavancas podem destravar eficiência, margem e escala.</p>
+
+        <div class="intro__note">
+          <p><strong>Questionário</strong></p>
+          <p>Para cada pergunta, marque a alternativa que melhor descreve a realidade da sua empresa hoje. Cada alternativa vale uma pontuação (indicada entre parênteses), usada para calcular o score final de maturidade.</p>
+        </div>
+
+        <button class="btn btn--primary" id="btn-start" type="button">INICIAR DIAGNÓSTICO</button>
+      </div>
+    </section>
+
+    <!-- QUESTIONNAIRE -->
+    <section class="screen screen--quiz" id="screen-quiz">
+      <div class="quiz">
+        <div class="quiz__progress">
+          <div class="quiz__progress-head">
+            <span class="quiz__category" id="quiz-category">USO ATUAL</span>
+            <span class="quiz__count"><span id="quiz-index">1</span> / <span id="quiz-total">11</span></span>
+          </div>
+          <div class="progressbar"><div class="progressbar__fill" id="progressbar-fill"></div></div>
+        </div>
+
+        <h2 class="quiz__question" id="quiz-question">Pergunta</h2>
+
+        <div class="options" id="quiz-options" role="radiogroup" aria-labelledby="quiz-question"></div>
+
+        <div class="quiz__nav">
+          <button class="btn btn--ghost" id="btn-back" type="button">Voltar</button>
+          <button class="btn btn--primary" id="btn-next" type="button" disabled>Avançar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="screen screen--result" id="screen-result">
+      <div class="result">
+        <p class="eyebrow">Resultado do diagnóstico</p>
+
+        <div class="result__score">
+          <div class="gauge" id="gauge">
+            <svg viewBox="0 0 200 200" class="gauge__svg" aria-hidden="true">
+              <circle class="gauge__track" cx="100" cy="100" r="86" />
+              <circle class="gauge__value" cx="100" cy="100" r="86" id="gauge-arc" />
+            </svg>
+            <div class="gauge__label">
+              <span class="gauge__number" id="score-number">0</span>
+              <span class="gauge__unit">/ 100</span>
+            </div>
+          </div>
+          <div class="result__level">
+            <span class="result__level-tag" id="level-tag">Nível</span>
+            <h1 class="result__level-name" id="level-name">—</h1>
+            <p class="result__level-range" id="level-range">0 – 100 pontos</p>
+            <p class="result__raw" id="score-raw">Total: 0 de 110 pontos</p>
+          </div>
+        </div>
+
+        <p class="result__desc" id="level-desc"></p>
+
+        <div class="result__block">
+          <h2 class="result__block-title">Recomendações</h2>
+          <ul class="reco-list" id="reco-list"></ul>
+        </div>
+
+        <div class="result__block" id="bottlenecks-block">
+          <h2 class="result__block-title">Possíveis gargalos</h2>
+          <p class="result__block-hint" id="bottlenecks-hint">Se a resposta a uma pergunta pontuar 7 ou menos, ela indica um possível gargalo.</p>
+          <ul class="bottleneck-list" id="bottleneck-list"></ul>
+        </div>
+
+        <div class="result__method">
+          <h3>Como apurar o resultado</h3>
+          <p>Some os pontos das 11 respostas marcadas. O total máximo possível é 110 pontos. Converta o total para uma escala de 0 a 100 (total ÷ 110 × 100) e localize a faixa correspondente abaixo.</p>
+        </div>
+
+        <div class="result__nav">
+          <button class="btn btn--ghost" id="btn-restart" type="button">Refazer diagnóstico</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/logo-genesis.svg" alt="Genesis Consulting" class="footer-logo" />
+    <p>Arquitetura de Inteligência · Genesis Consulting</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
